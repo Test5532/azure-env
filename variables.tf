@@ -1,7 +1,10 @@
 variable global_app{
     description = "A map of tags to assign to a resource"
     type = map(string)
-    default = "Test"
+     default     = {
+    "env" = "Test"
+  }
+
     validation{
         condition = (
             length(var.global_app) > 0
