@@ -1,11 +1,7 @@
 # Used for providers/version of TF
 
-terraform {
-  required_providers {
-    azurerm = {
-      version = "3.113.0"
+
+provider "azurerm" {
       skip_provider_registration = true
-      
-    }
-  }
+      features {}
 }
