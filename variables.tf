@@ -1,6 +1,7 @@
 variable global_app{
     description = "A map of tags to assign to a resource"
     type = map(string)
+    default = "Test"
     validation{
         condition = (
             length(var.global_app) > 0
@@ -12,6 +13,7 @@ variable global_app{
 variable global_opco{
     description = "A 3 letter String of opco assigned to a resource"
     type = string
+    default = "AGO"
     validation{
         condition = (
                 can(regex("^[A-Z]{3}",var.global_opco))
@@ -28,6 +30,7 @@ variable global_opco{
 variable global_env{
     description = "A 3 letter String of opco assigned to a resource"
     type = string
+    default = "development"
     validation{
         condition = (
                 can(regex("^(?:development|production|preproduction)$",var.global_env))
@@ -43,6 +46,7 @@ variable global_env{
 variable global_dataclass{
     description = "A 3 letter String of opco assigned to a resource"
     type = string
+    default = "confidential"
     validation{
         condition = (
                 can(regex("^(?:public|confidential|secret)$",var.global_dataclass))
